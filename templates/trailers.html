@@ -1,0 +1,39 @@
+{% extends 'movielist.html' %}
+{% block trailers %}
+<div class="trailers">
+  <div class="container">
+    <div class="row ipad-width">
+      <div class="col-md-12">
+        <div class="title-hd">
+          <h2>in theater</h2>
+          <a href="#" class="viewall">View all <i class="ion-ios-arrow-right"></i></a>
+        </div>
+        <div class="videos">
+          <div class="slider-for-2 video-ft">
+            <!-- DB -->
+            {% for i in trailer %}
+            <div>
+              <iframe class="item-video" src="#" data-src="{{i.trailer_URL}}"></iframe>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="slider-nav-2 thumb-ft">
+            <!-- DB -->
+            {% for i in trailerItem %}
+            <div class="item">
+              <div class="trailer-img">
+                <img src="{{i.img_src}}" alt="{{i.img_alt}}" width="{{i.img_width}}" height="{{i.img_height}}">
+              </div>
+              <div class="trailer-infor">
+                <h4 class="desc">{{i.description}}</h4>
+                <p>({{i.duration}})</p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

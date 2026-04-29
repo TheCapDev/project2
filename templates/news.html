@@ -1,0 +1,86 @@
+{% extends 'trailers.html' %}
+
+{% block news %}
+<div class="latestnew">
+  <div class="container">
+    <div class="row ipad-width">
+      <div class="col-md-8">
+        <div class="n">
+          <!-- DB -->
+          {% for i in advertisement_latestNew %}
+          <img src="{{i.img_src}}" alt="" width="{{i.img_width}}" height="{{i.img_height}}">
+          {% endfor %}
+        </div>
+        <div class="title-hd">
+          <h2>Latest news</h2>
+        </div>
+        <div class="tabs">
+          <div class="tab-content">
+            <div id="tab31" class="tab active">
+              <div class="row">
+                <div class="blog-item-style-1">
+                  <!-- DB -->
+                  {% for i in news_image %}
+                  <img src="{{i.img_src}}" alt="" width="{{i.img_width}}" height="{{i.img_height}}">
+                  {% endfor %}
+                  <div class="blog-it-infor">
+                    <!-- DB -->
+                  {% for i in news_blog %}
+                    <h3><a href="#">{{i.title}}</a></h3>
+                    <span class="time">{{i.time}}</span>
+                    <p>{{i.content}}</p>
+                  {% endfor %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="morenew">
+          <div class="title-hd">
+            <h3>More news on Blockbuster</h3>
+            <a href="#" class="viewall">See all Movies news<i class="ion-ios-arrow-right"></i></a>
+          </div>
+          <div class="more-items">
+            <div class="left">
+              <!-- DB -->
+              {% for i in news_left %}
+              <div class="more-it">
+                <h6><a href="#">{{i.title}}</a></h6>
+                <span class="time">{{i.time}}</span>
+              </div>
+              {% endfor %}
+            </div>
+            <div class="right">
+              <!-- DB -->
+              {% for i in news_right %}
+              <div class="more-it">
+                <h6><a href="#">{{i.title}}</a></h6>
+                <span class="time">{{i.time}}</span>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="sidebar">
+          <div class="sb-twitter sb-it">
+            <h4 class="sb-title">Tweet to us</h4>
+            <div class="slick-tw">
+              <!--  DB  -->
+              {% for i in tweet %}
+              <div class="tweet item" id="">
+                <!-- Put your twiter id here -->
+                <p>{{i.content}}</p>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end of latest new v1 section-->
+{% endblock %}

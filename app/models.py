@@ -1,0 +1,95 @@
+from django.db import models
+
+# Create your models here.
+class Slider(models.Model):
+  id = models.IntegerField(primary_key=True)
+  image_src = models.CharField(max_length=200)
+  image_width = models.IntegerField()
+  image_height = models.IntegerField()
+  anchor_url = models.CharField(max_length=200)
+  movie_genre = models.CharField(max_length=10)
+  movie_title = models.CharField(max_length=20)
+  lower_rating = models.CharField(max_length=5)
+  upper_rating = models.CharField(max_length=5)
+
+class Advertisement(models.Model):
+  id = models.IntegerField(primary_key=True)
+  section = models.CharField(max_length=20)
+  img_src = models.CharField(max_length=200)
+  img_width = models.IntegerField()
+  img_height = models.IntegerField()
+
+class SocialLink(models.Model):
+  id = models.IntegerField(primary_key=True)
+  name = models.CharField(max_length=50)
+  anchor_class = models.CharField(max_length=2)
+  icon_class = models.CharField(max_length=30)
+  url = models.CharField(max_length=200)
+
+class Celebrity(models.Model):
+  id = models.IntegerField(primary_key=True)
+  anchor_url = models.CharField(max_length=200)
+  img_width = models.IntegerField()
+  img_height = models.IntegerField()
+  celebrity_url= models.CharField(max_length=200)
+  celebrity_name = models.CharField(max_length=50)
+  celebrity_type = models.CharField(max_length=20)
+
+class Trailer(models.Model):    
+  id = models.IntegerField(primary_key=True)
+  trailer_URL = models.CharField(max_length=200)
+
+class TrailerItem(models.Model):
+  id = models.IntegerField(primary_key=True)
+  img_src = models.CharField(max_length=200)
+  img_alt = models.CharField(max_length=100)
+  img_width = models.IntegerField()
+  img_height = models.IntegerField()
+  description = models.CharField(max_length=100)
+  duration = models.CharField(max_length=10)
+
+class News(models.Model):
+  id = models.IntegerField(primary_key=True)
+  section = models.CharField(max_length=20)
+  img_src = models.CharField(max_length=200)
+  img_alt = models.CharField(max_length=100)
+  img_width = models.IntegerField()
+  img_height = models.IntegerField()
+  title = models.CharField(max_length=100)
+  content = models.CharField(max_length=500)
+  time = models.CharField(max_length=20)
+
+class Tweet(models.Model):
+  id = models.IntegerField(primary_key=True)
+  content = models.TextField()    
+
+class MovieTheater(models.Model):
+  id = models.IntegerField(primary_key=True)
+  type = models.CharField(max_length=20)
+  img_src = models.CharField(max_length=200)
+  img_width = models.IntegerField()
+  img_height = models.IntegerField()
+  anchor_url = models.CharField(max_length=200)
+  movie_genre = models.CharField(max_length=10)
+  movie_title = models.CharField(max_length=20)
+  lower_rating = models.CharField(max_length=5)
+  upper_rating = models.CharField(max_length=5)
+
+class MovieTv(models.Model):
+  id = models.IntegerField(primary_key=True)
+  type = models.CharField(max_length=20)
+  img_src = models.CharField(max_length=200)
+  img_width = models.IntegerField()
+  img_height = models.IntegerField()
+  anchor_url = models.CharField(max_length=200)
+  movie_genre = models.CharField(max_length=10)
+  movie_title = models.CharField(max_length=20)
+  lower_rating = models.CharField(max_length=5)
+  upper_rating = models.CharField(max_length=5)
+
+class NewLetter(models.Model):
+  id = models.AutoField(primary_key=True)
+  email = models.CharField(max_length=50)
+  date = models.CharField(max_length=20)
+  active = models.BooleanField()
+  
