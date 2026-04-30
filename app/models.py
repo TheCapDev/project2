@@ -11,6 +11,8 @@ class Slider(models.Model):
   movie_title = models.CharField(max_length=20)
   lower_rating = models.CharField(max_length=5)
   upper_rating = models.CharField(max_length=5)
+  def __str__(self):
+    return self.movie_title
 
 class Advertisement(models.Model):
   id = models.IntegerField(primary_key=True)
@@ -18,6 +20,8 @@ class Advertisement(models.Model):
   img_src = models.CharField(max_length=200)
   img_width = models.IntegerField()
   img_height = models.IntegerField()
+  def __str__(self):
+    return self.section
 
 class SocialLink(models.Model):
   id = models.IntegerField(primary_key=True)
@@ -25,6 +29,8 @@ class SocialLink(models.Model):
   anchor_class = models.CharField(max_length=2)
   icon_class = models.CharField(max_length=30)
   url = models.CharField(max_length=200)
+  def __str__(self):
+    return self.name
 
 class Celebrity(models.Model):
   id = models.IntegerField(primary_key=True)
@@ -34,10 +40,14 @@ class Celebrity(models.Model):
   celebrity_url= models.CharField(max_length=200)
   celebrity_name = models.CharField(max_length=50)
   celebrity_type = models.CharField(max_length=20)
+  def __str__(self):
+    return self.celebrity_name
 
 class Trailer(models.Model):    
   id = models.IntegerField(primary_key=True)
   trailer_URL = models.CharField(max_length=200)
+  def __str__(self):
+    return self.trailer_URL
 
 class TrailerItem(models.Model):
   id = models.IntegerField(primary_key=True)
@@ -58,6 +68,8 @@ class News(models.Model):
   title = models.CharField(max_length=100)
   content = models.CharField(max_length=500)
   time = models.CharField(max_length=20)
+  def __str__(self):
+    return self.title
 
 class Tweet(models.Model):
   id = models.IntegerField(primary_key=True)
@@ -74,6 +86,8 @@ class MovieTheater(models.Model):
   movie_title = models.CharField(max_length=20)
   lower_rating = models.CharField(max_length=5)
   upper_rating = models.CharField(max_length=5)
+  def __str__(self):
+    return self.movie_title
 
 class MovieTv(models.Model):
   id = models.IntegerField(primary_key=True)
@@ -86,10 +100,14 @@ class MovieTv(models.Model):
   movie_title = models.CharField(max_length=20)
   lower_rating = models.CharField(max_length=5)
   upper_rating = models.CharField(max_length=5)
+  def __str__(self):
+    return self.movie_title
 
 class NewsLetter(models.Model):
   id = models.AutoField(primary_key=True)
   email = models.EmailField(max_length=50)
   date = models.DateField()
   active = models.BooleanField()
+  def __str__(self):
+    return self.email
   
