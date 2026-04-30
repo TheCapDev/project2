@@ -281,10 +281,18 @@
         <div class="flex-child-ft item5">
           <h4>Newsletter</h4>
           <p>Subscribe to our newsletter system now <br> to get latest news from us.</p>
-          <form action="#">
-            <input type="text" placeholder="Enter your email...">
+          <form id="newsletter-form" method="post" action="{% url 'subscribe_newsletter' %}">
+            {% csrf_token %}
+            <input type="email" name="email" placeholder="Enter your email..." required>
           </form>
-          <a href="#" class="btn">Subscribe now <i class="ion-ios-arrow-forward"></i></a>
+            <a href="#" class="btn" onclick="event.preventDefault(); document.getElementById('newsletter-form').requestSubmit();">Subscribe now <i class="ion-ios-arrow-forward"></i></a>
+          {% if messages %}
+            <ul class="newsletter-messages">
+              {% for message in messages %}
+                <li>{{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
         </div>
       </div>
     </div>

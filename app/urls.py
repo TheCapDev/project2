@@ -19,4 +19,5 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name="index"),
+    path('newsletter/subscribe/', views.subscribe_newsletter, name="subscribe_newsletter"),
 ]

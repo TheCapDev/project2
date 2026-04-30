@@ -10,7 +10,7 @@ from .models import (
     Tweet,
     MovieTheater,
     MovieTv,
-    NewLetter
+    NewsLetter
 )
 
 admin.site.register([
@@ -24,5 +24,5 @@ admin.site.register([
     Tweet,
     MovieTheater,
     MovieTv,
-    NewLetter
+    NewsLetter
 ])

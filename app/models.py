@@ -87,9 +87,9 @@ class MovieTv(models.Model):
   lower_rating = models.CharField(max_length=5)
   upper_rating = models.CharField(max_length=5)
 
-class NewLetter(models.Model):
+class NewsLetter(models.Model):
   id = models.AutoField(primary_key=True)
-  email = models.CharField(max_length=50)
-  date = models.CharField(max_length=20)
+  email = models.EmailField(max_length=50)
+  date = models.DateField()
   active = models.BooleanField()
   
