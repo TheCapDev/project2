@@ -5590,6 +5590,9 @@ ul {
 .latestnew .morenew .more-items .more-it h6 a:hover {
   color: #dcf836;
 }
+.latestnew .n {
+  margin-bottom: 30px;
+}
 .latestnew .tabs {
   margin-left: 15px;
 }
